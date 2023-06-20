@@ -16,9 +16,10 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
-Ticket 1:
 
-Acceptance Criteria:
+## Ticket 1:
+
+**Acceptance Criteria:**
 
 - Add a new field called "Custom Id" to the Agents table in the database.
 - Create a form in the frontend that allows Facility users to add/edit the custom ID for each Agent.
@@ -27,21 +28,21 @@ Acceptance Criteria:
 - Update the report generation function to use the Custom ID instead of the internal ID.
 Estimated Time: 3-5 days
 
-Implementation Details:
+**Implementation Details:**
 
 To fulfill the requirements mentioned in the ticket, the following steps should be taken:
 
-Database Migration:
+**Database Migration:**
 
 Perform a database migration to add a new field called "Custom Id" to the Agents table. This can be achieved by running the necessary SQL migration script or using an ORM tool's migration feature.
 
-Frontend Implementation:
+**Frontend Implementation:**
 
 Create a form in the frontend application that allows Facility users to add or edit the custom ID for each Agent. The form should retrieve the existing Agents' data and display the custom ID field for editing purposes.
 Implement validation to ensure the uniqueness of custom IDs, if required.
 Upon submission of the form, make an API call to the corresponding backend endpoint to update the custom ID for the Agent.
 
-Backend API Endpoints:
+**Backend API Endpoints:**
 
 Add/update REST API endpoints for the Agents resource to handle the new "Custom Id" field.
 Implement an endpoint to retrieve the list of Agents with their respective custom IDs.
@@ -52,7 +53,7 @@ Shift Management:
 Update the backend functions responsible for creating and updating Shifts to use the custom ID instead of the internal ID when assigning an Agent to a Shift, if a custom ID exists for the Agent.
 Ensure that the custom ID is properly linked to the corresponding Agent during Shift assignment.
 
-Report Generation:
+**Report Generation:**
 
 Modify the report generation function to use the custom ID instead of the internal ID when generating reports.
 Update the report templates or logic to reflect the changes and display the custom IDs in the generated reports.
@@ -62,11 +63,11 @@ Once the implementation is completed, ensure thorough testing to verify the func
 
 
 
-Ticket 2:
+## Ticket 2:
 
 As a Facility user, you should be able to see the custom ID of each Agent assigned to a Shift so that you can verify if your custom IDs are correct. To fulfill this requirement, the following implementation details need to be addressed:
 
-Update the getShiftsByFacility API endpoint:
+**Update the getShiftsByFacility API endpoint:**
 
 Modify the API response of the getShiftsByFacility endpoint to include the Custom ID of each Agent assigned to a Shift. This can be done by retrieving the Custom ID information from the database or any other relevant data source and including it in the response payload.
 Update the Shift list view and individual Shift detail view in the frontend:
@@ -77,32 +78,25 @@ By implementing the above changes, Facility users will have access to the Custom
 
 
 
-
-
-
-
-
-
-
-
-
-Ticket 3:
+## Ticket 3:
 As a Facility user, I should be able to search for a Shift by the custom id of the Agent assigned to it so that I can quickly find particular records.
 
-Acceptance Criteria:
+**Acceptance Criteria:**
 
-The frontend should have a search bar where the Facility users can enter a custom id.
-The API should allow searching for Shifts by the Custom Id of the Agent assigned to it.
-The frontend should display the filtered Shifts that match the search term.
+- The frontend should have a search bar where the Facility users can enter a custom id.
+- The API should allow searching for Shifts by the Custom Id of the Agent assigned to it.
+- The frontend should display the filtered Shifts that match the search term.
+
 To fulfill this ticket, the following implementation details can be considered:
 
-Frontend:
+**Frontend:**
 
 Add a search bar to the Shift list view in the frontend. This search bar should allow Facility users to enter the custom id.
 Implement functionality to capture the search term entered by the user.
 Make an API request to retrieve Shifts based on the custom id entered in the search bar.
 Display the filtered Shifts that match the search term in the frontend Shift list view.
-API:
+
+**API:**
 
 Update the getShiftsByFacility API endpoint to allow filtering by the Custom Id of the Agent assigned to the Shift.
 Modify the API endpoint to accept a query parameter for the custom id search term.
@@ -112,43 +106,26 @@ By implementing the above changes, Facility users will be able to search for Shi
 
 
 
+## Ticket 4:
+ As a Facility admin, I want to be able to remove or update the custom id of an Agent so that I have control over how they are identified.
 
+**Acceptance Criteria:**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ticket 4:
-As a Facility admin, I want to be able to remove or update the custom id of an Agent so that I have control over how they are identified.
-
-Acceptance Criteria:
-
-The frontend should allow editing/removing the Custom Id field for each Agent.
-Backend endpoints should be updated to handle removing/updating the Custom Id field.
-If the Custom Id of an Agent is removed, their shifts should use the internal id instead when generating reports.
+- The frontend should allow editing/removing the Custom Id field for each Agent.
+- Backend endpoints should be updated to handle removing/updating the Custom Id field.
+- If the Custom Id of an Agent is removed, their shifts should use the internal id instead when generating reports.
 
 Estimated time: 2-3 days
 
-Implementation details:
+**Implementation details:**
 
 To fulfill this ticket, the following steps need to be taken:
 
-Frontend Changes:
+**Frontend Changes:**
 
 Update the Agents list view in the frontend to include the ability to edit/remove the Custom Id field for each Agent. This will allow the Facility admin to modify or delete the custom id as needed.
 
-Backend API Endpoints:
+**Backend API Endpoints:**
 
 Update the REST API endpoints related to the Agents resource to handle the removal and updating of the Custom Id field. This will involve modifying the backend logic to process the requests for removing or updating the custom id.
 Shift Creation/Update:
