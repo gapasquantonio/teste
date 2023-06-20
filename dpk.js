@@ -8,7 +8,7 @@ exports.deterministicPartitionKey = (event) => {
     return TRIVIAL_PARTITION_KEY;
   }
 
-  let candidate =
+  const candidate =
     event.partitionKey ||
     crypto.createHash("sha3-512").update(JSON.stringify(event)).digest("hex");
 
