@@ -14,7 +14,7 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 
 
-- Removed the unnecessary `let declaration for candidate` since it can be declared with const and reassigned later. Also,by using the ternary operator notation, It makes the code looks shortens and more concise.
+- by using the ternary operator notation for the let candidate, It makes the code looks shortens and more concise.
 - Removed the redundant JSON.stringify call if the candidate is already a string.
 - Reduced nesting whenever possible by using early returns. 
 - Combined the two cases where we assigned a value for candidate into a single statement. If that resolution, we avoid code duplication and further simplify the logic.
